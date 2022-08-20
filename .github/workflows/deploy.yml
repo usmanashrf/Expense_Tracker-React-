@@ -28,4 +28,3 @@ jobs:
       run: npm install --global surge
 
     - name: Deploy to Surge
-      run: surge ./expensetracker/ money-tarck-app344.surge.sh --token ae347e005bf8879d6d4416dcc24568e2

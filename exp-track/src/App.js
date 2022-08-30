@@ -3,11 +3,12 @@ import AccountSummary from './components/AccountSummary';
 import AddTransaction from './components/AddTransaction';
 import Balance from './components/Balance';
 import Header from './components/Header';
-import TransactionHistory from './components/TransactionHistory';
+import {TransactionHistory} from './components/TransactionHistory';
+import { GlobalProvider } from './Context/GobalContext';
 
 function App() {
   return (
-    <div className="App">
+    <GlobalProvider>
       <Header></Header>
       <div className="container">
       <Balance></Balance>
@@ -15,7 +16,7 @@ function App() {
       <TransactionHistory></TransactionHistory>
       <AddTransaction></AddTransaction>
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 

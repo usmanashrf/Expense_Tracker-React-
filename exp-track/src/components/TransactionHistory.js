@@ -1,23 +1,29 @@
+import { useContext } from 'react';
 import '../App.css';
+import AppReducer from '../Context/AppReducer';
+import { GlobalContext } from '../Context/GobalContext';
+import {Transaction} from './Transaction';
 
-function TransactionHistory() {
+export const TransactionHistory =() =>{
+   const {transactions} = useContext(GlobalContext);
   return (
     <div >
-    <h3>Transaction History</h3> 
+    <h3>Transaction History</h3>
     <ul className='list'>
-        <li className='plus'>
-            Project First income
-            <span>$1000.0</span>
-            <button className='delete-btn'>X</button>
-        </li>
-        <li className='minus'>
-            Salary Distribution 
+                {transactions.map(transaction => 
+                    (
+                    <Transaction key={transaction.id} transaction={transaction} />
+                    )
+                )} 
+
+        {/* <li className='minus'>
+            Salary Distribution
             <span>-$5000.0</span>
             <button className='delete-btn'>X</button>
-        </li>
+        </li> */}
     </ul>
     </div>
   );
 }
 
-export default TransactionHistory;
+//export default TransactionHistory;

@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import '../App.css';
-import AppReducer from '../Context/AppReducer';
 import { GlobalContext } from '../Context/GobalContext';
 import {Transaction} from './Transaction';
 
